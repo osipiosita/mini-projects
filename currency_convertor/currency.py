@@ -18,10 +18,11 @@ def convert_currency(base):
     
 while True:
     base = input('Enter the base currency (q to quit): ').upper()
+    
     if base == 'Q':
         print('Goodbye!')
         break
-
+    amount = int(input('How much do you want to convert? '))
     data = convert_currency(base)
 
     if data == None:
@@ -29,4 +30,4 @@ while True:
     
     del data[base]
     for key, value in data.items():
-        print(f'{key}:{value}')
+        print(f'{key}:{amount * value}')
